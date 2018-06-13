@@ -33,7 +33,7 @@
     End Sub
 
     Private Sub CallSandstormApi()
-        LogEvent("Calling Sandstorm API", EventLogEntryType.Information)
+        'LogEvent("Calling Sandstorm API", EventLogEntryType.Information) 'Verbose
         Dim Req As System.Net.HttpWebRequest
         Dim TargetUri As New Uri(My.Settings.TargetUri)
         Dim Output As System.Net.HttpWebResponse
@@ -52,7 +52,7 @@
 
         Try
             Output = Req.GetResponse()
-            LogEvent("Sandstorm API Response: " & Output.StatusCode.ToString, EventLogEntryType.Information)
+            LogEvent("Sandstorm API Response: " & CStr(CInt(Output.StatusCode)) & " " & Output.StatusCode.ToString, EventLogEntryType.Information)
             Output.Close()
         Catch WebEx As System.Net.WebException
             If WebEx.Response IsNot Nothing Then

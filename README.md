@@ -16,5 +16,5 @@ SSCaaS combines my two true loves: Sandstorm.io and badly-written Visual Basic c
 
 SSCaaS can also be used as a lightweight client to send heartbeat messages to XRF's sync module.
 
-- Set the URL in `SSCaaS.exe.config` to `http://SYNC_SERVER_DOMAIN_HERE/v1.php?message_type=heartbeat&amp;destination=server&amp;access_key=ACCESS_KEY_HERE`.
-- Username and password are not required to connect to XRF Sync, so their contents are irrelevant.
+- Set the URL in `SSCaaS.exe.config` to `http://SYNC_SERVER_DOMAIN_HERE/v1.php?message_type=heartbeat&amp;destination=server&amp;user_agent=SSCaaS/1.0.0.0&amp;access_key=ACCESS_KEY_HERE`, where the access key is the Sync Server Access Key.
+- If connecting to a XRF Sync server on Sandstorm, use "sandstorm" as the username and the Sandstorm Acces Token as the password.
